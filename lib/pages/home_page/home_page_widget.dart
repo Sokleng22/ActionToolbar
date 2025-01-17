@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'dart:async';
-import '/custom_code/actions/index.dart' as actions;
-import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
@@ -71,44 +69,88 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: SizedBox(
-                        width: 650.0,
-                        height: 40.0,
-                        child: custom_widgets.ActionToolbarWidget(
-                          width: 650.0,
-                          height: 40.0,
-                          textColor: FlutterFlowTheme.of(context).tertiary,
-                          disableToInvoice: true,
-                          onEdit: () async {
-                            unawaited(
-                              () async {
-                                await actions.nullAction();
-                              }(),
-                            );
-                          },
-                          onPrint: () async {},
-                          onDelete: () async {
-                            await showDialog(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: const Text('Infromation'),
-                                  content: const Text(
-                                      'Do you want to delete this cusomer ?'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () =>
-                                          Navigator.pop(alertDialogContext),
-                                      child: const Text('Ok'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
-                          },
-                          onToInvoice: () async {},
-                        ),
+                      alignment: const AlignmentDirectional(1.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FFButtonWidget(
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
+                            text: 'Edit',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Inter Tight',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          FFButtonWidget(
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
+                            text: 'Download / Print',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Inter Tight',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          FFButtonWidget(
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
+                            text: 'Delete',
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Inter Tight',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ].divide(const SizedBox(width: 2.0)),
+                      ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 708.0,
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                     ),
                   ],
